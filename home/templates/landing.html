@@ -2553,7 +2553,7 @@
         }
 
         try {
-            const DJANGO_URL = 'http://localhost:8000/contact/'; // ← change this to your endpoint
+            const DJANGO_URL = 'https://madarakatech.vercel.app/contact/';
 
             const res = await fetch(DJANGO_URL, {
                 method: 'POST',
@@ -2592,7 +2592,7 @@
         } catch (err) {
             // Network / CORS error
             showStatus('error',
-                '⚠ CONNECTION FAILED — CHECK BACKEND IS RUNNING ON localhost:8000');
+                '⚠ CONNECTION FAILED ');
             btnText.textContent = 'TRANSMIT →';
             btn.disabled = false;
             btn.style.opacity = '1';
