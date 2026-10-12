@@ -1,192 +1,60 @@
-# MADARAKA TECHNOLOGY
+# Wayne Murunga | Portfolio
 
-> **Bridging software intelligence with telecommunications engineering.**  
-> We design, build, and deploy ICT solutions that transform organisations — online, anywhere, anytime.
+A simple, fast portfolio site for Wayne Murunga, a software engineer working with Python, Django and PostgreSQL.
 
----
+**Live site:** https://madarakatech.vercel.app/
 
-## 🌐 Live Site
+## About
 
-```
-https://madarakatech.vercel.app/
-```
+This site lists my experience, projects, skills and education, with links to my code and contact details. It is a single static page with no build step and no dependencies.
 
----
-
-## 📁 Project Structure
+## Project structure
 
 ```
-madaraka/
-├── frontend/
-│   └── landing.html          # Main website (single-file)
-├── backend/
-│   ├── manage.py
-│   ├── requirements.txt
-│   └── contact/
-│       ├── views.py           # Contact form + email handler
-│       └── urls.py
+.
+├── index.html    # The whole site (HTML and CSS in one file)
 └── README.md
 ```
 
----
+## Features
 
-## ✨ Features
+- Single page with Experience, Projects, Skills, Education and Contact sections
+- Responsive layout that works on phones and desktops
+- Automatic light and dark mode based on the device setting
+- Keyboard-friendly, with visible focus styles
+- Fast to load: one file, plus two Google Fonts (IBM Plex Sans and Source Serif 4)
 
-| Feature | Description |
-|---|---|
-| 🎮 **Hack Game** | Playable space firewall defender embedded in the hero section |
-| 🌍 **Interactive Globe** | Draggable 3D globe showing global reach — Nairobi highlighted |
-| 🔐 **Secret Easter Egg** | Konami code `↑↑↓↓←→←→BA` triggers Matrix rain mosaic of the company name |
-| ⌨️ **Live Terminal** | Animated typing terminal bar cycling ICT facts and system status |
-| ✉️ **Contact Form** | Submits to Django backend — sends branded emails to both team and enquirer |
-| 🌌 **Particle Constellation** | Mouse-reactive particle background with connecting lines |
+## Run locally
 
----
+Open `index.html` in a browser. No install is needed.
 
-## 🛠 Tech Stack
+To serve it locally instead:
 
-### Frontend
-- Vanilla HTML / CSS / JavaScript — zero frameworks, zero dependencies
-- **Three.js r128** — 3D globe
-- **Canvas API** — particle system, game engine, Matrix rain
-- **Google Fonts** — Bebas Neue, Rajdhani, Share Tech Mono
-
-### Backend
-- **Django** — REST contact endpoint
-- **django-cors-headers** — cross-origin request handling
-- **Requests** — HTTP calls to email microservice
-
----
-
-## 🚀 Getting Started
-
-### Frontend
-
-Just open `frontend/madaraka.html` in a browser — no build step required.
-
-For local development with Live Server (VS Code):
 ```bash
-# Install Live Server extension, then right-click madaraka.html → Open with Live Server
+python -m http.server 8000
 ```
 
----
+Then visit http://localhost:8000
 
-### Backend
+## Deploy
 
-**1. Clone and set up virtual environment**
-```bash
-git clone https://github.com/wayne-alex/madaraka.git
-cd madaraka/backend
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-```
+The site is hosted on Vercel as a static site. To update it, commit the change to the main branch and Vercel will redeploy automatically.
 
-**2. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
+## Editing the content
 
-**3. Run the dev server**
-```bash
-python manage.py runserver
-```
+All content is in `index.html`. To update it:
 
-Backend will be live at `http://localhost:8000`
+- **Intro and links:** edit the `intro` section near the top
+- **Experience:** edit the `#experience` section
+- **Projects:** copy an existing `<div class="item">` block in `#projects` and change the text and links
+- **Colours and fonts:** change the variables at the top of the `<style>` block (`--accent`, `--ink`, `--serif`, `--sans`)
 
----
+## Contact
 
-## 📦 Requirements
+- Email: waynealex9914@gmail.com
+- GitHub: https://github.com/wayne-alex
+- LinkedIn: https://ke.linkedin.com/in/wayne-murunga-107886253
 
-`backend/requirements.txt`
-```
-django>=4.2
-django-cors-headers>=4.0
-requests>=2.31
-```
+## License
 
----
-
-## ✉️ Contact Form Flow
-
-```
-User submits form
-      │
-      ▼
-Django /contact/ endpoint
-      │
-      ├──▶ POST → node-mailer (Vercel)
-      │         └──▶ 📧 madarakatech@gmail.com
-      │                   "New Enquiry from {name}"
-      │
-      └──▶ POST → node-mailer (Vercel)
-                └──▶ 📧 {user email}
-                          "Enquiry Received — Madaraka Technology"
-                          (branded dark HTML, no-reply)
-```
-
----
-
-## 🔧 Configuration
-
-Update these values before deploying:
-
-**`frontend/madaraka.html`** — line with `DJANGO_URL`:
-```js
-const DJANGO_URL = 'https://madarakatech.vercel.app/contact/'; // ← your live URL
-```
-
-**`backend/contact/views.py`**:
-
-**`backend/settings.py`**:
-```python
-CORS_ALLOWED_ORIGINS = [
-    "https://madarakatech.vercel.app/"
-]
-# Remove CORS_ALLOW_ALL_ORIGINS = True in production
-```
-
----
-
-## 🎮 Easter Egg
-
-On the live site, type the Konami code on your keyboard:
-
-```
-↑  ↑  ↓  ↓  ←  →  ←  →  B  A
-```
-
-The screen fills with Matrix rain that resolves into a glowing character-mosaic spelling:
-
-```
-MADARAKA
-TECHNOLOGY
-```
-
----
-
-## 👥 Founders
-
-| | Role | Expertise |
-|---|---|---|
-| **WAYNE MURUNGA** | Software & Systems Director | Full-stack dev, AI/ML, databases, cybersecurity |
-| **JOB WANDERA** | Telecoms & Infrastructure Director | Networking, VoIP, cloud, system integration |
-
----
-
-## 📬 Contact
-
-- **Email:** madarakatech@gmail.com
-- **Website:** [madaraka.tech](https://madarakatech.vercel.app/)
-- **Location:** Nairobi, Kenya 🇰🇪
-
----
-
-## 📄 License
-
-© 2024 Madaraka Technology. All rights reserved.
-
----
-
-<div align="center">
-  <sub>Built with ⚡ by Madaraka Technology — CS + Telecom Engineering</sub>
-</div>
+© 2026 Wayne Murunga. All rights reserved.
